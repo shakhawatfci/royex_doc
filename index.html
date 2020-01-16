@@ -30,20 +30,20 @@
     <script src="js/script.js"></script>
 
     <style>
-    html {
-        background-color: #FFFFFF;
-        color: #383838;
-    }
+        html {
+            background-color: #FFFFFF;
+            color: #383838;
+        }
 
-    ::-moz-selection {
-        background: #444444;
-        color: #DDDDDD;
-    }
+        ::-moz-selection {
+            background: #444444;
+            color: #DDDDDD;
+        }
 
-    ::selection {
-        background: #444444;
-        color: #DDDDDD;
-    }
+        ::selection {
+            background: #444444;
+            color: #DDDDDD;
+        }
 
       /*  #documenter_sidebar #documenter_logo {
             background: url(css/img/fav.png) no-repeat 45% 45%;
@@ -151,6 +151,10 @@
             </li>
 
             <li>
+                <a href="#api_attendance">Getting Attendance From Machine</a>
+            </li>
+
+            <li>
                 <a href="#project_description">Technical Description</a>
             </li>
             <li>
@@ -166,11 +170,11 @@
     <div id="documenter_content">
         <section id="documenter_cover">
             <h1>Royex</h1>
-            <h2>Initial Version</h2>
+            <h2>Version:2.0</h2>
             <hr>
             <ul>
                 <li>Created: 19/09/2019</li>
-                <li>latest Update: 19/09/2019</li>
+                <li>latest Update: 20/01/2020</li>
                 <li>By: iGlyphic</li>
                 <li>
                     <a href=""></a>
@@ -187,7 +191,7 @@
         <p style="clear: both;">&nbsp;</p>
 
         <section id="app_feature">
-            <h3>Royex Application</h3>
+            <h3>Royex Application <strong style="color: green">(Now It's Multi-Languale)</strong></h3>
             <hr class="notop">
             <p>Firstly, a huge thanks for purchasing this <strong>Royex</strong>, your support is truly appreciated!<br />
             Royex  is a Open Source Human Resource and payroll management software. For maintaining HR & Payroll department of any company.</p>
@@ -331,10 +335,10 @@
         <hr class="notop">
         <ul>
             <li>1) Screenshot(Step 1): Login to your Cpanel/VPS/Hosting Panel, Create MySQL Database, Create New User &amp; Add/Grant user to the Database. You can follow this tutorial- <a href="https://www.youtube.com/embed/yg-1joTkkis" target="_blank">https://www.youtube.com/watch?v=qSdbNoW2f-c</a></li>
-            <li>2) Screenshot(Step 2): Go to PHPMyAdmin, select your newly created Database, go to import &amp; import "hrms.sql" from folder downloaded_project_folder->db->hrms.sql.</li>
+            <li>2) Screenshot(Step 2): Go to PHPMyAdmin, select your newly created Database, go to import &amp; import "hrms.sql" from folder royex.zip unzip folder software.zip folders  folder spftware->db->hrms.sql</li>
             <li>3) Now from the File Manager of your hosting go to the corresponding directory where you want to install Laravel Backend. You can use domain root, directory &amp; sub-domain too.</li>
-            <li>4) Use file from belontor.zip.</li>
-            <li>5) Upload zip, extract zip file on the corresponding directory(maybe some .htaccess configuration changing needed, depends on your hosting environment).</li>
+            <li>4) Use file from software.zip.</li>
+            <li>5) Upload software.zip on your domain or subdomain root, extract zip file on the corresponding directory(maybe some .htaccess configuration changing needed, depends on your hosting environment).</li>
             <li>6) Screenshot(Step 3): Edit .env file from Laravel Root
                 <ul>
                     <li>APP_NAME: Your Backend App name</li>
@@ -380,53 +384,102 @@
 
 
         <h6 class="biu">Role</h6>
-        <p>You Can Create Role For Different kind of user (dont delete super admin role from your application you can update the name !)</p>  
+        <p>You Can Create Role For Different kind of user (don't delete super admin role from your application you can update the name !)</p>  
         <p>
             <img alt="" src="assets/screenshot/role.JPG" style="max-width: 100%; height: auto;">
         </p>
 
 
         <h6 class="biu">Role Permission</h6>
-        <p>Which Role of application will find which menu you can control it from here</p>  
+        <p>Which Role of application will find which menu you can control it from here ( employee and admin will have same admin panel but based on there permission they will have specific menu which is permit to them )</p>  
         <p>
             <img alt="" src="assets/screenshot/permission.JPG" style="max-width: 100%; height: auto;">
         </p>  
 
         <h6 class="biu">Employee Manage</h6>
         <p>Add edit delete employee are done from here . you have to set up Department
-        Designation
-        Branch before creating employee.During Creating employee if u select any supervisor he will find leave application of you and he will confirm or cancel it . Cool !.</p>  
-        <p>
-            <img alt="" src="assets/screenshot/employee.JPG" style="max-width: 100%; height: auto;">
-        </p>    
+            Designation
+            Branch before creating employee.During Creating employee if u select any supervisor he will find leave application of you and he will confirm or cancel it . Cool !.<strong style="color:red">(Remember Supervisor Will Have The Leave Application of those employee which is belongs To him..Supervisor will accept or decline there request)</strong></p>  
+            <p>
+                <img alt="" src="assets/screenshot/employee.JPG" style="max-width: 100%; height: auto;">
+            </p>    
 
-        <h6 class="biu">Employee Warning</h6>
-        <p>Admin can send warning to any employee.Employee will find the warning  notice into dashboard when he login his account</p>  
-        <p>
-            <img alt="" src="assets/screenshot/warning.JPG" style="max-width: 100%; height: auto;">
-        </p>      
-
-
-        <h6 class="biu">Employee Warning</h6>
-        <p>Admin can send warning to any employee.Employee will find the warning  notice into dashboard when he login his account</p>  
-        <p>
-            <img alt="" src="assets/screenshot/warning.JPG" style="max-width: 100%; height: auto;">
-        </p>
-        <hr>       
+            <h6 class="biu">Employee Warning</h6>
+            <p>Admin can send warning to any employee.Employee will find the warning  notice into dashboard when he login his account</p>  
+            <p>
+                <img alt="" src="assets/screenshot/warning.JPG" style="max-width: 100%; height: auto;">
+            </p>      
 
 
-        <h6 class="biu">Terminate</h6>
-        <p>Admin Can Terminate anyone from this module</p>  
-        <p>
-            <img alt="" src="assets/screenshot/terminate.JPG" style="max-width: 100%; height: auto;">
-        </p>
-        <hr>
-    </section>
+            <h6 class="biu">Employee Warning</h6>
+            <p>Admin can send warning to any employee.Employee will find the warning  notice into dashboard when he login his account</p>  
+            <p>
+                <img alt="" src="assets/screenshot/warning.JPG" style="max-width: 100%; height: auto;">
+            </p>
+            <hr>       
+
+
+            <h6 class="biu">Terminate</h6>
+            <p>Admin Can Terminate anyone from this module</p>  
+            <p>
+                <img alt="" src="assets/screenshot/terminate.JPG" style="max-width: 100%; height: auto;">
+            </p>
+            <hr>
+        </section>
+
+
+        <section id="api_attendance">
+            <h3>Getting Atendance From Api</h3>
+            <p>Remember For Getting Attendance Data from any kind of device make sure device Finger ID  or Face ID,or some others ID,  will have to be same with the employee Finger ID field during employee adding. </p>
+
+            <h4>U have to use the .htaccess file different for that in server u will provide a .example_htaccess you can use it replace of .htacess </h4>
+
+            <h4>You Have To Call The API by POST method <strong>https://your_application_domain/api/attendnance</strong> from your attendance device with a perameter finger_id and an optional in_out_time perameter which will current timestamps  if u don't give it the software will use the current time as in_out_time .. your first hit to the api will count as in time and last as out time . you can use <a href="https://www.getpostman.com/">postman</a> for test in our application</h4>
+
+
+            <h4>Here is a Sample PHP Request with curl (you can request from any paltform)</h4>
+
+            <code>
+            <pre>
+             <?php
+
+             $curl = curl_init();
+
+             curl_setopt_array($curl, array(
+             CURLOPT_URL => "http://http://hrms.limmexbd.com/api/attendnance?finger_id=4",
+             CURLOPT_RETURNTRANSFER => true,
+             CURLOPT_ENCODING => "",
+             CURLOPT_MAXREDIRS => 10,
+             CURLOPT_TIMEOUT => 0,
+             CURLOPT_FOLLOWLOCATION => true,
+             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+             CURLOPT_CUSTOMREQUEST => "POST",
+             ));
+
+             $response = curl_exec($curl);
+
+             curl_close($curl);
+             echo $response;
+
+             ?>
+         </pre>
+
+         <p><strong>if request success the response will be <br>
+            {
+    "status": 202,
+    "message": "Employee attendnance updated"
+}</strong></p>
+         </code>
 
 
 
 
-    <section id="project_description">
+     </section>
+
+
+
+
+     <section id="project_description">
         <h3>Technical Description</h3><hr>
 
         <h2>Technologies:</h2>
@@ -502,12 +555,12 @@
 
                 <script type="text/javascript">
                     $(document).ready(function(){
-                       
-                       y = new Date();
 
-                       $('#year').text(y.getFullYear())
+                     y = new Date();
 
-                    })
-                </script>
+                     $('#year').text(y.getFullYear())
 
-                </html>
+                 })
+             </script>
+
+             </html>

@@ -437,10 +437,50 @@
         </section>
 
         <section id="employee_attendance">
-            <h3>Attendance by whitlisted ip</h3>
+            <h3>Attendance by whitlisted ip <span class="badge badge-primary">New</span></h3>
             <p>Employee Now Can Update there Attendance By Check in / out from dashboard by whitelisted ip.You can also disable ip checking during attendance.</p>
 
             <p>for finding setting and adding whitelisted ip please go to the menu <strong>attendance->setting->dashboard attendance </strong></p>
+
+            <h5>If u already using/buyed our system and wanting to update with this attendance system follow the bellow instruction (new buyer will get the system already in database)</h5>
+            <p>Go To Your phpmyadmin and inside  royex database on query section run this two query</p>
+             <code>
+                 CREATE TABLE `ip_settings` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `ip_address` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ip_status` tinyint(4) NOT NULL DEFAULT 0 COMMENT '0 = not checking it 1 = checking ip',
+  `status` tinyint(4) NOT NULL COMMENT '0 = not providing employee self attendance 1 = providing',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+             </code>
+             
+             <br>
+
+             <code>  
+INSERT INTO `ip_settings` (`id`, `ip_address`, `ip_status`, `status`, `created_at`, `updated_at`) VALUES
+(1, '127.0.0.1', 0, 1, NULL, '2020-07-19 04:32:30');
+             </code>
+
+             <p>And Run Bellow Query for Creating whitelisted_ip table</p>
+
+             <code>
+                 
+CREATE TABLE `white_listed_ips` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `ip_setting_id` int(11) DEFAULT 0,
+  `white_listed_ip` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+             </code>
+
+            <p>Run This Query To Add The Setting Menus</p>
+            <code>
+                INSERT INTO `menus` (`id`, `parent_id`, `action`, `name`, `menu_url`, `module_id`, `status`) VALUES(64, 18, NULL, 'Dashboard Attendance', 'attendance.dashboard', 4, 1);
+            </code>
+
+            <p>Now Provide Permission to this menu from role permission and update your attendance  setting as you want. and replace old file manger file by new software file you are done</p>
         </section>
 
 

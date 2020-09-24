@@ -343,11 +343,11 @@
         <hr class="notop">
         <ul>
             <li>1) Screenshot(Step 1): Login to your Cpanel/VPS/Hosting Panel, Create MySQL Database, Create New User &amp; Add/Grant user to the Database. You can follow this tutorial- <a href="https://www.youtube.com/embed/yg-1joTkkis" target="_blank">https://www.youtube.com/watch?v=qSdbNoW2f-c</a></li>
-            <li>2) Screenshot(Step 2): Go to PHPMyAdmin, select your newly created Database, go to import &amp; import "hrms.sql" from folder royex.zip unzip folder software.zip folders  folder spftware->db->hrms.sql</li>
+            <li>2) Screenshot(Step 2): Go to PHPMyAdmin, select your newly created Database, go to import &amp; import "hrms.sql" from folder royex.zip unzip folder and find hrms.sql</li>
             <li>3) Now from the File Manager of your hosting go to the corresponding directory where you want to install Laravel Backend. You can use domain root, directory &amp; sub-domain too.</li>
             <li>4) Use file from software.zip.</li>
             <li>5) Upload software.zip on your domain or subdomain root, extract zip file on the corresponding directory(maybe some .htaccess configuration changing needed, depends on your hosting environment).</li>
-            <li>6) Screenshot(Step 3): Edit .env file from Laravel Root
+            <li>6) Screenshot(Step 3): Edit .env file from Web Root
                 <ul>
                     <li>APP_NAME: Your Backend App name</li>
                     <li>APP_URL: Root URL of your Backend App</li>
@@ -491,7 +491,7 @@ CREATE TABLE `white_listed_ips` (
             <p>for finding front end  setting and service you have to go into <strong>setting->front end setting </strong> menu</p>
 
              <p>If you buy after this update u don't need to follow below steps</p>
-             
+
             <h4 style="color: red">If u previously buyed our application now wants to update with this front end option</h4>
             <p>First Replace All File And Folder with new download (if u have uploaded file then don't replace uploads folder)</p>
             <p>Go To Your phpmyadmin and inside  royex database on SQL section run this 4 query (<strong style="color: red">

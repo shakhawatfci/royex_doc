@@ -1,8 +1,4 @@
 <!doctype html>
-<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
-<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
-<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
-<!--[if (gt IE 7)|!(IE)]><!-->
 <html lang="en-us">
 <!--<![endif]-->
 <head>
@@ -140,9 +136,6 @@
                 <li>
                     <a class="current" href="#documenter_cover">Start</a>
                 </li>
-   <!--          <li>
-                <a href="#whats_new">What's new on 4.3</a>
-            </li> -->
             <li>
                 <a href="#app_feature">App Feature</a>
             </li>
@@ -156,6 +149,10 @@
 
             <li>
                 <a href="#employee_attendance">Employee Attendance By Whitelisted IP</a>
+            </li>            
+
+            <li>
+                <a href="#front_end_job">Front End Job Application <span style="color: red;font-weight: bold">New</span></a>
             </li>
 
 
@@ -183,7 +180,7 @@
             <hr>
             <ul>
                 <li>Created: 19/09/2019</li>
-                <li>latest Update: 20/01/2020</li>
+                <li>latest Update: 24/09/2020</li>
                 <li>By: iGlyphic</li>
                 <li>
                     <a href=""></a>
@@ -200,7 +197,9 @@
         <p style="clear: both;">&nbsp;</p>
 
         <section id="app_feature">
-            <h3>Royex Application <strong style="color: green">(Now It's Multi-Languale)</strong></h3>
+            <h3>Royex Application <strong style="color: green">(Yahoo! Now It's Having a nice landing page in front)</strong></h3>
+            <hr>
+             <p style="color: red">Remember You Will Get  HR backend (software) section in <a href="">https://yourdomain.com/dashboard</a> in newer version because it will have front end in root url 😊</p>
             <hr class="notop">
             <p>Firstly, a huge thanks for purchasing this <strong>Royex</strong>, your support is truly appreciated!<br />
             Royex  is a Open Source Human Resource and payroll management software. For maintaining HR & Payroll department of any company.</p>
@@ -442,6 +441,8 @@
 
             <p>for finding setting and adding whitelisted ip please go to the menu <strong>attendance->setting->dashboard attendance </strong></p>
 
+            <p>If you buy after this update u don't need to follow below steps</p>
+
             <h4 style="color: red">If u already using/buyed our system and wanting to update with this attendance system follow the bellow instruction (new buyer will get the system already in database)</h4>
             <p>Go To Your phpmyadmin and inside  royex database on query section run this two query</p>
              <code>
@@ -481,6 +482,83 @@ CREATE TABLE `white_listed_ips` (
             </code>
 
             <p>Now Provide Permission to this menu from role permission and update your attendance  setting as you want. and replace old file manger file by new software file you are done</p>
+        </section>        
+
+
+        <section id="front_end_job">
+            <h3>Now People Can Apply To Job From Front End <span class="badge badge-primary">New</span></h3>
+            <p>You will have front end in hr now there user can apply to job . and a premium landing page for adding your service about and basic contact page your backend software will be in <a href="">https://yourwebsite.com/dashboard</a></p>
+
+            <p>for finding front end  setting and service you have to go into <strong>setting->front end setting </strong> menu</p>
+
+            <h4 style="color: red">If u previously buyed our application now wants to update with this front end option</h4>
+            <p>First Replace All File And Folder with new download (if u have uploaded file then don't replace uploads folder)</p>
+            <p>Go To Your phpmyadmin and inside  royex database on SQL section run this 4 query (<strong style="color: red">
+                Or If u want to do it by uploading file then newly added database table will be given in a folder called new_db_table just import those table
+            </strong>)</p>
+             <code>
+   CREATE TABLE `services` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `service_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `service_icon` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+             </code>
+             
+             <br>
+        <p>Bellow Query Will Create Front Setting table for controlling front end based on condition</p>
+             <code>  
+CREATE TABLE `front_settings` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `company_title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `home_page_big_title` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `short_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `service_title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `job_title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `about_us_image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `logo` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `footer_text` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `about_us_description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `contact_website` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contact_phone` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contact_email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `contact_address` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `counter_1_title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `counter_1_value` int(11) NOT NULL,
+  `counter_2_title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `counter_2_value` int(11) NOT NULL,
+  `counter_3_title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `counter_3_value` int(11) NOT NULL,
+  `counter_4_title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `counter_4_value` int(11) NOT NULL,
+  `show_job` tinyint(4) DEFAULT 1,
+  `show_service` tinyint(4) DEFAULT 1,
+  `show_about` tinyint(4) DEFAULT 1,
+  `show_contact` tinyint(4) DEFAULT 1,
+  `show_counter` tinyint(4) DEFAULT 1,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+             </code>
+
+             <p>And Run Bellow Query for Creating basic setting data to start you can change them later from back end</p>
+
+             <code>
+                 
+INSERT INTO `front_settings` (`id`, `company_title`, `home_page_big_title`, `short_description`, `service_title`, `job_title`, `about_us_image`, `logo`, `footer_text`, `about_us_description`, `contact_website`, `contact_phone`, `contact_email`, `contact_address`, `counter_1_title`, `counter_1_value`, `counter_2_title`, `counter_2_value`, `counter_3_title`, `counter_3_value`, `counter_4_title`, `counter_4_value`, `show_job`, `show_service`, `show_about`, `show_contact`, `show_counter`, `created_at`, `updated_at`) VALUES
+(1, 'Royex', 'Royex - HR and Payroll Management Software', 'Royex is a Human Resource and payroll management software. For maintaining HR & Payroll department of any company', 'Service We Provide', 'Start Your Career With US', 'about_us.jpg', 'logo.png', '© 2020 Royex by BDWEBTRICKS', 'Aenean eros et nisl sagittis as vestibulum at Nullam nulla eros ultricies site amet nonummy id imperdiet feugiat pede as Sed lectuse Donec mollis hendrerit Phasellus at nec sem in at pellentesque facilisis at Praesent congue erat at massa Sed sit cursus turpis vitae tortor that a Donec posuere as vulputate arcu Phasellus accumsan velit.\r\n\r\nMaecenas tempus tellus eget as that condimentum rhoncus sem quam semper libero amete adipiscing sem neque sed ipsum Nam quam nunce blandit at luctus pulvinar hendrerit id lorem Maecenas nec et ante tincidunt tempus.\r\n\r\nSed consequat leo eget bibendum sodales augue at velit cursus nunc.', 'https//:royexbd.com', '0283932949', 'example@gmail.com', 'Royex LTd, 12005 NY', 'Project  Done', 120, 'Content Written', 220, 'Client', 200, 'Training', 230, 1, 1, 1, 1, 1, '2020-09-23 04:43:29', '2020-09-24 01:04:04');
+             </code>
+
+            <p>Run This Query in menus table in sql section to Add The Setting Menus</p>
+            <code>
+                INSERT INTO `menus` (`id`, `parent_id`, `action`, `name`, `menu_url`, `module_id`, `status`) VALUES(65, 0, NULL, 'Front Setting', NULL, 11, 1),
+(66, 65, NULL, 'General Setting', 'front.setting', 11, 1),
+(67, 65, NULL, 'Front Service', 'service.index', 11, 1);
+            </code>
+
+            <p>Now Provide Permission to this menu from role permission and update your front end  setting as you want. and replace old file manger file by new software file you are done</p>
         </section>
 
 
